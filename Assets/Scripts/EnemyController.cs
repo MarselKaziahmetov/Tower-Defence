@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
         }
         else if (collision.tag == "Finish")
         {
-            LevelManager._instance.RemoveEnemyFromScreen();
+            LevelManager._Instance.RemoveEnemyFromScreen();
             Destroy(gameObject);
         }
     }

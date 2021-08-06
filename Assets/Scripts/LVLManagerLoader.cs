@@ -1,16 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LVLManagerLoader : MonoBehaviour
+public class LVLManagerLoader<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public GameObject _lvlManager;
+    private static T _instance;
 
-    private void Awake()
+    public static T _Instance
     {
-        if (LevelManager._instance == null)
+        get
         {
-            Instantiate(_lvlManager);
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<T>();
+            }
+            else if (_instance != FindObjectOfType<T>())
+            {
+                Destroy(FindObjectOfType<T>());
+            }
+
+            DontDestroyOnLoad(FindObjectOfType<T>());
+
+            return _instance;
         }
     }
 }

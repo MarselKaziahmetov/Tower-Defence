@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : LVLManagerLoader<LevelManager>
 {
-    public static LevelManager _instance = null;
-
     public GameObject _spawnPoint;
     public GameObject[] _enemiesForm;  //разновидность врагов
     public int _maxEnemiesOnScreen;
@@ -14,20 +12,6 @@ public class LevelManager : MonoBehaviour
 
     private const float _spawnDelay= 0.5f; // задержка между спавнов противников
     private int _enemiesOnScreen;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-        }
-        else if (_instance != null)
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
-    }
 
     private void Start()
     {
