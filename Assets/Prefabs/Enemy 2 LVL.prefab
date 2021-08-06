@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2771664016878119175}
   - component: {fileID: 275677538047205197}
   - component: {fileID: 5199932534296284071}
+  - component: {fileID: 361663032344600142}
   m_Layer: 6
   m_Name: Enemy 2 LVL
   m_TagString: Enemy
@@ -151,3 +152,31 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &361663032344600142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771664016878119174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa78a7bc4e494a4fa9ebe6ccffe099a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: 0
+  _exit: {fileID: 3297112815079140581, guid: 303401eaf74ac2044aeada23f6fb35db, type: 3}
+  _wayPoints:
+  - {fileID: 4514592835583862040, guid: 547711a1bd2f39a45a7687689646ea0a, type: 3}
+  - {fileID: 3967208188374772036, guid: 7de1e3fab6ad9be4ab177f6afc7104a2, type: 3}
+  - {fileID: 3593756290722022432, guid: 69b44993f3b34144e94f0d52cee45fb9, type: 3}
+  - {fileID: 2837450582792783912, guid: e4eefbf72697f034293ddc706b62b296, type: 3}
+  - {fileID: 3684691026321212087, guid: 6622be332d6b0a84b92d82f7c8523356, type: 3}
+  - {fileID: 4253175579217681804, guid: f6d348d7874bbdc43ae770b7684b76c7, type: 3}
+  - {fileID: 1992733363438706515, guid: d01953e56267d2f4992b6692f7da1eb7, type: 3}
+  - {fileID: 3345337296807286133, guid: d3bea536d4cf0f6429d653505d3ff773, type: 3}
+  - {fileID: 3700677938582648923, guid: e31e0de7b628e134593e59b672a81bee, type: 3}
+  - {fileID: 6504998612028988560, guid: 5810539921f4de64492718807263bf47, type: 3}
+  - {fileID: 2126434368066438432, guid: 83d4d42f08b9906409b9f2657547cbdb, type: 3}
+  - {fileID: 7805970182647367092, guid: 2874b50289cdb6843ae34ef75d3c57bd, type: 3}
+  _navigation: 0.01

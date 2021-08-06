@@ -8,7 +8,7 @@ public class LVLManagerLoader : MonoBehaviour
 
     private void Awake()
     {
-        if (LevelManager.instance == null)
+        if (LevelManager._instance == null)
         {
             Instantiate(_lvlManager);
         }

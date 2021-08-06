@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance = null;
+    public static LevelManager _instance = null;
 
     public GameObject _spawnPoint;
-    public GameObject[] _enemiesForm;
+    public GameObject[] _enemiesForm;  //разновидность врагов
     public int _maxEnemiesOnScreen;
     public int _totalEnemies;
     public int _enemiesPerSpawn;    //количество спавнящихся противников за раз 
 
+    private const float _spawnDelay= 0.5f; // задержка между спавнов противников
     private int _enemiesOnScreen;
 
     private void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
         }
-        else if (instance != null)
+        else if (_instance != null)
         {
             Destroy(gameObject);
         }
@@ -28,17 +29,12 @@ public class LevelManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    private void Start()
     {
-        SpawnEnemy();
+        StartCoroutine(SpawnEnemy());
     }
 
-    void Update()
-    {
-        
-    }
-
-    private void SpawnEnemy()
+    private IEnumerator SpawnEnemy()
     {
         if ( (_enemiesPerSpawn > 0) && (_enemiesOnScreen < _totalEnemies) )
         {
@@ -51,6 +47,17 @@ public class LevelManager : MonoBehaviour
                     _enemiesOnScreen++;
                 }
             }
+
+            yield return new WaitForSeconds(_spawnDelay);
+            StartCoroutine(SpawnEnemy());
+        }
+    }
+
+    public void RemoveEnemyFromScreen()
+    {
+        if (_enemiesOnScreen > 0)
+        {
+            _enemiesOnScreen--;
         }
     }
 }
