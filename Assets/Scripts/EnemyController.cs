@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public int _target;
-    public Transform _exit;
-    public Transform[] _wayPoints;
-    public float _navigation;
+    [SerializeField] private Transform _exit;
+    [SerializeField] private Transform[] _wayPoints;
+    [SerializeField] private float _navigation;
 
+    private int _target;
     private Transform _enemyPosition;
     private float _navigationTime;
 

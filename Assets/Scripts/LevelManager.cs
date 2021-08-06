@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LevelManager : LVLManagerLoader<LevelManager>
 {
-    public GameObject _spawnPoint;
-    public GameObject[] _enemiesForm;  //разновидность врагов
-    public int _maxEnemiesOnScreen;
-    public int _totalEnemies;
-    public int _enemiesPerSpawn;    //количество спавнящихся противников за раз 
+    [SerializeField] private GameObject _spawnPoint;
+    [SerializeField] private GameObject[] _enemiesForm;  //разновидность врагов
+    [SerializeField] private int _maxEnemiesOnScreen;
+    [SerializeField] private int _totalEnemies;
+    [SerializeField] private int _enemiesPerSpawn;    //количество спавнящихся противников за раз 
 
     private const float _spawnDelay= 0.5f; // задержка между спавнов противников
     private int _enemiesOnScreen;
