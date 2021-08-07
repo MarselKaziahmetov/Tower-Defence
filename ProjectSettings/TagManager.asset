@@ -6,6 +6,10 @@ TagManager:
   tags:
   - ControllPoint
   - Enemy
+  - TowerPoints
+  - Ground
+  - Tower
+  - TowerPointFull
   layers:
   - Default
   - TransparentFX

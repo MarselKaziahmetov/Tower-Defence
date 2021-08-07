@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    [SerializeField] GameObject _tower;
+    [SerializeField] GameObject _towerObject;
+    [SerializeField] Sprite _phantomSprite;
 
-    public GameObject _Tower
+    public GameObject _TowerObject
     {
         get
         {
-            return _tower;
+            return _towerObject;
+        }
+    }
+
+    public Sprite _PhantomSprite
+    {
+        get
+        {
+            return _phantomSprite;
         }
     }
 }
