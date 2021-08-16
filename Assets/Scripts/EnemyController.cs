@@ -7,19 +7,32 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform _exit;
     [SerializeField] private Transform[] _wayPoints;
     [SerializeField] private float _navigation;
+    [SerializeField] private int _health;
 
     private int _target;
     private Transform _enemyPosition;
     private float _navigationTime;
+    private bool _isDead = false;
+    private Collider2D _enemyCollider;
+    private Animator _anim;
+
+    public bool _IsDead 
+    {
+        get { return _isDead; }
+    }
 
     private void Start()
     {
         _enemyPosition = GetComponent<Transform>();
+        _enemyCollider = GetComponent<Collider2D>();
+        _anim = GetComponent<Animator>();
+
+        LevelManager._Instance.RegisterEnemy(this);
     }
 
     private void Update()
     {
-        if (_wayPoints != null)
+        if (_wayPoints != null && _isDead == false)
         {
             _navigationTime += Time.deltaTime;
 
@@ -47,9 +60,36 @@ public class EnemyController : MonoBehaviour
         }
         else if (collision.tag == "Finish")
         {
-            LevelManager._Instance.RemoveEnemyFromScreen();
-            Destroy(gameObject);
+            LevelManager._Instance.UnregisterEnemy(this );
         }
+        else if (collision.tag == "Projectile")
+        {
+            Projectile _newProj = collision.gameObject.GetComponent<Projectile>();
+            EnemyHit(_newProj.AttackDamage);
+            Destroy(collision.gameObject); 
+        }
+    }
+
+    public void EnemyHit(int _hitPoints)
+    {
+        if(_health - _hitPoints > 0)
+        {
+            _health -= _hitPoints;
+
+            _anim.Play("Hurt");
+        }
+        else
+        {
+            Death();
+
+            _anim.SetTrigger("DidDie");
+        }
+    }
+
+    public void Death()
+    {
+        _isDead = true;
+        _enemyCollider.enabled = false;
     }
 
 }

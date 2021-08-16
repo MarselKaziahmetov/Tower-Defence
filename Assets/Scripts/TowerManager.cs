@@ -48,8 +48,6 @@ public class TowerManager : LVLManagerLoader<TowerManager>
     {
         _towerBTNPressed = _towerSelected;
         EnabledDragPhantom(_towerBTNPressed._PhantomSprite);
-
-        Debug.Log("yep" + _towerBTNPressed.gameObject);
     }
 
     public void FollowMousePhantom()

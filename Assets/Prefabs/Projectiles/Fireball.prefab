@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1468148717356164168
+--- !u!1 &3735570821358015203
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1468148717356164174}
-  - component: {fileID: 1468148717356164175}
-  - component: {fileID: -2846409621417927612}
+  - component: {fileID: 1078970487443357708}
+  - component: {fileID: 1954564632822814560}
+  - component: {fileID: 2023692462854023234}
+  - component: {fileID: 817040415514773455}
   m_Layer: 0
-  m_Name: Tower1
-  m_TagString: Tower
+  m_Name: Fireball
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1468148717356164174
+--- !u!4 &1078970487443357708
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468148717356164168}
+  m_GameObject: {fileID: 3735570821358015203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.01, y: -0.53, z: 0}
+  m_LocalPosition: {x: -6.0714087, y: -1.1243513, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1468148717356164175
+--- !u!212 &1954564632822814560
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468148717356164168}
+  m_GameObject: {fileID: 3735570821358015203}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,29 +73,44 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: e8419a798de67b04ab71c0e257099008, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b58844da82ade8479237b7b140a8648, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.56, y: 2.56}
+  m_Size: {x: 0.375, y: 0.212}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-2846409621417927612
+--- !u!58 &2023692462854023234
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3735570821358015203}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12
+--- !u!114 &817040415514773455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1468148717356164168}
+  m_GameObject: {fileID: 3735570821358015203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2297f63f0e63f4c469c3d08b166e5781, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b38ab5fa3097ea478dfa7baa5ea0ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timeBetweenAttacks: 1
-  _attackRadius: 2
-  _projectile: {fileID: 7583687640434790166, guid: 72852f010303ab043b46920a3b7e94f0, type: 3}
+  _attackDamage: 30
+  _projType: 2
