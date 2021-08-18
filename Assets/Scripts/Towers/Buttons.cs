@@ -6,6 +6,15 @@ public class Buttons : MonoBehaviour
 {
     [SerializeField] GameObject _towerObject;
     [SerializeField] Sprite _phantomSprite;
+    [SerializeField] int _towerPrice;
+
+    public int TowerPrice
+    {
+        get
+        {
+            return _towerPrice;
+        }
+    }
 
     public GameObject _TowerObject
     {

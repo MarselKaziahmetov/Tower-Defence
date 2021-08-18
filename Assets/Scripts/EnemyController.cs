@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform[] _wayPoints;
     [SerializeField] private float _navigation;
     [SerializeField] private int _health;
+    [SerializeField] private int _rewardAmount; 
 
     private int _target;
     private Transform _enemyPosition;

@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class TowerManager : LVLManagerLoader<TowerManager>
 {
-    Buttons _towerBTNPressed;
-    SpriteRenderer _selectedTowerSprite;
+    public Buttons _towerBTNPressed
+    {
+        get; set;
+    }
+    
+    private SpriteRenderer _selectedTowerSprite;
 
     void Start()
     {

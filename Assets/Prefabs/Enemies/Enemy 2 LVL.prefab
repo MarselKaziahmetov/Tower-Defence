@@ -180,3 +180,4 @@ MonoBehaviour:
   - {fileID: 7805970182647367092, guid: 2874b50289cdb6843ae34ef75d3c57bd, type: 3}
   _navigation: 0.01
   _health: 40
+  _rewardAmount: 8

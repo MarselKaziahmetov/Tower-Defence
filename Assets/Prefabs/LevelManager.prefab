@@ -43,11 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc47a6589c658034cb4c69659df7edbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _totalMoneyText: {fileID: 0}
+  _currentWaveText: {fileID: 0}
+  _totalEscapedText: {fileID: 0}
+  _playBTNText: {fileID: 0}
+  _playBTN: {fileID: 0}
+  _totalWaves: 10
   _spawnPoint: {fileID: 9131842382368708892, guid: a7d531f00bcf87349af8852102bdf130, type: 3}
   _enemiesForm:
   - {fileID: 1477138336749353104, guid: 80502d22ac4c2994180b05ded3606d7c, type: 3}
   - {fileID: 2771664016878119174, guid: 05040ed5630dcf34ca14ac0686c7a57a, type: 3}
   - {fileID: 3646071091784896189, guid: 97b38ff1beb87d440af01db4f0687bf6, type: 3}
   _maxEnemiesOnScreen: 10
-  _totalEnemies: 30
+  _totalEnemies: 10
   _enemiesPerSpawn: 1
+  EnemyList: []
