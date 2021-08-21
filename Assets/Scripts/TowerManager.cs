@@ -11,10 +11,15 @@ public class TowerManager : LVLManagerLoader<TowerManager>
     }
     
     private SpriteRenderer _selectedTowerSprite;
+    private List<TowerControll> TowerList = new List<TowerControll>();
+    private List<Collider2D> BuildList = new List<Collider2D>();
+    private Collider2D _buildTile;
 
     void Start()
     {
         _selectedTowerSprite = GetComponent<SpriteRenderer>();
+        _buildTile = GetComponent<Collider2D>();
+        _selectedTowerSprite.enabled = false;
     }
 
     void Update()
@@ -26,8 +31,9 @@ public class TowerManager : LVLManagerLoader<TowerManager>
 
             if (_hit.collider.tag == "TowerPoints")
             {
-                _hit.collider.tag = "TowerPointFull"; 
-
+                _buildTile = _hit.collider;
+                _buildTile.tag = "TowerPointFull";
+                RegisterBuildState(_buildTile);
                 PlaceTower(_hit);
             }
         }
@@ -38,20 +44,59 @@ public class TowerManager : LVLManagerLoader<TowerManager>
         }
     }
 
+    public void RegisterBuildState(Collider2D _buildTag)
+    {
+        BuildList.Add(_buildTag);
+    }
+
+    public void RegisterTower(TowerControll _tower)
+    {
+        TowerList.Add(_tower);
+    }
+
+    public void RenameTagBuildSite()
+    {
+        foreach (Collider2D _buildTag in BuildList)
+        {
+            _buildTag.tag = "TowerPoints";
+        }
+        BuildList.Clear();
+    }
+
+    public void DestroyAllTowers()
+    {
+        foreach (TowerControll _tower in TowerList)
+        {
+            Destroy(_tower.gameObject);
+        }
+        TowerList.Clear();
+    }
+
     public void PlaceTower(RaycastHit2D _hit)
     {
         if (!EventSystem.current.IsPointerOverGameObject() && _towerBTNPressed != null)
         {
-            GameObject _newTower = Instantiate(_towerBTNPressed._TowerObject);
+            TowerControll _newTower = Instantiate(_towerBTNPressed._TowerObject);
             _newTower.transform.position = _hit.transform.position;
+            BuyTower(_towerBTNPressed.TowerPrice);
+            LevelManager._Instance.AudioSource.PlayOneShot(SoundManager._Instance.TowerBuilt);
+            RegisterTower(_newTower);
             DisabledDragPhantom();
         }
     }
 
+    public void BuyTower(int _price)
+    {
+        LevelManager._Instance.SubtractMoney(_price);
+    }
+
     public void SelectedTower(Buttons _towerSelected)
     {
-        _towerBTNPressed = _towerSelected;
-        EnabledDragPhantom(_towerBTNPressed._PhantomSprite);
+        if (_towerSelected.TowerPrice <= LevelManager._Instance.TotalMoney)
+        {
+            _towerBTNPressed = _towerSelected;
+            EnabledDragPhantom(_towerBTNPressed._PhantomSprite);
+        }
     }
 
     public void FollowMousePhantom()

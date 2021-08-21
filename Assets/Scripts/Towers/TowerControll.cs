@@ -58,6 +58,19 @@ public class TowerControll : MonoBehaviour
         Projectile _newProjectile = Instantiate(_projectile) as Projectile;
         _newProjectile.transform.localPosition = transform.localPosition;
 
+        if (_newProjectile.ProjectileType == projectileType.arrow)
+        {
+            LevelManager._Instance.AudioSource.PlayOneShot(SoundManager._Instance.Arrow);
+        }
+        else if (_newProjectile.ProjectileType == projectileType.fireball)
+        {
+            LevelManager._Instance.AudioSource.PlayOneShot(SoundManager._Instance.Fireball);
+        }
+        else if (_newProjectile.ProjectileType == projectileType.rock)
+        {
+            LevelManager._Instance.AudioSource.PlayOneShot(SoundManager._Instance.Rock);
+        }
+
         if (_enemyTarget == null)
         {
             Destroy(_newProjectile);

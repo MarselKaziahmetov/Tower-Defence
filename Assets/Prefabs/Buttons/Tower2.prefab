@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd82b27e1e6803146b5237632e2997f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerObject: {fileID: 8856872735165303929, guid: 3c3eb2b975787f24ba6dcb48b6b13e5f, type: 3}
+  _towerObject: {fileID: 1910355399029971202, guid: 3c3eb2b975787f24ba6dcb48b6b13e5f, type: 3}
   _phantomSprite: {fileID: 21300000, guid: f19faf71ce1fc814684258562fe85cbd, type: 3}
   _towerPrice: 50
 --- !u!1 &1637210168109724289

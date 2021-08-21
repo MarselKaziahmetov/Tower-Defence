@@ -61,7 +61,10 @@ public class EnemyController : MonoBehaviour
         }
         else if (collision.tag == "Finish")
         {
+            LevelManager._Instance.RoundEscaped++;
+            LevelManager._Instance.TotalEscaped++;
             LevelManager._Instance.UnregisterEnemy(this );
+            LevelManager._Instance.IsWaveOver();
         }
         else if (collision.tag == "Projectile")
         {
@@ -76,7 +79,7 @@ public class EnemyController : MonoBehaviour
         if(_health - _hitPoints > 0)
         {
             _health -= _hitPoints;
-
+            LevelManager._Instance.AudioSource.PlayOneShot(SoundManager._Instance.Hit);
             _anim.Play("Hurt");
         }
         else
@@ -91,6 +94,10 @@ public class EnemyController : MonoBehaviour
     {
         _isDead = true;
         _enemyCollider.enabled = false;
+        LevelManager._Instance.TotalKilled++;
+        LevelManager._Instance.IsWaveOver();
+        LevelManager._Instance.AddMoney(_rewardAmount);
+        LevelManager._Instance.AudioSource.PlayOneShot(SoundManager._Instance.Death);
     }
 
 }

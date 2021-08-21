@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5918704078653028411
+--- !u!1 &8800510359578137111
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,71 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8683633988965188417}
-  - component: {fileID: 3359046296173648391}
-  - component: {fileID: 5698971305006752782}
+  - component: {fileID: 976774864458481066}
+  - component: {fileID: 1353812700545913182}
+  - component: {fileID: 620721538959277287}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8683633988965188417
+--- !u!4 &976774864458481066
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918704078653028411}
+  m_GameObject: {fileID: 8800510359578137111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1541357, y: -0.30580264, z: -34.382347}
+  m_LocalPosition: {x: 899.57574, y: 566.006, z: -663.2731}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3359046296173648391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918704078653028411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc47a6589c658034cb4c69659df7edbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _totalMoneyText: {fileID: 0}
-  _currentWaveText: {fileID: 0}
-  _totalEscapedText: {fileID: 0}
-  _playBTNText: {fileID: 0}
-  _playBTN: {fileID: 0}
-  _totalWaves: 10
-  _spawnPoint: {fileID: 9131842382368708892, guid: a7d531f00bcf87349af8852102bdf130, type: 3}
-  _enemiesForm:
-  - {fileID: -64344245883533808, guid: 80502d22ac4c2994180b05ded3606d7c, type: 3}
-  - {fileID: 361663032344600142, guid: 05040ed5630dcf34ca14ac0686c7a57a, type: 3}
-  - {fileID: -2909667122957522753, guid: 97b38ff1beb87d440af01db4f0687bf6, type: 3}
-  _totalEnemies: 100
-  _enemiesPerSpawn: 1
-  EnemyList: []
---- !u!82 &5698971305006752782
+--- !u!82 &1353812700545913182
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5918704078653028411}
+  m_GameObject: {fileID: 8800510359578137111}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 3386b97ebaecadd439acb9d5306e8944, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -154,3 +128,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &620721538959277287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800510359578137111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772830baeb319314caa4a0e4dfe96290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arrow: {fileID: 8300000, guid: 1a95540977e441c44af55e02f5f6ec47, type: 3}
+  _death: {fileID: 8300000, guid: 429b7044b627b0948b5c39dc67382b39, type: 3}
+  _fireball: {fileID: 8300000, guid: ac63f0160fe7a33429e68c605c7cb44f, type: 3}
+  _gameover: {fileID: 8300000, guid: 003a268b414903d468772f7d09f9393a, type: 3}
+  _hit: {fileID: 8300000, guid: 491888f2f8008224b82d9d90b241acf1, type: 3}
+  _level: {fileID: 8300000, guid: 3386b97ebaecadd439acb9d5306e8944, type: 3}
+  _newgame: {fileID: 8300000, guid: c59b96f0b6a52604a83b72d7c60a59c8, type: 3}
+  _rock: {fileID: 8300000, guid: c9a76f949155d95489d35b931b0595ea, type: 3}
+  _towerBuilt: {fileID: 8300000, guid: 7cf54754593337041aff6c05ea41b991, type: 3}

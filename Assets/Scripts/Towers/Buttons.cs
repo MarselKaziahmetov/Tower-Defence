@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    [SerializeField] GameObject _towerObject;
+    [SerializeField] TowerControll _towerObject;
     [SerializeField] Sprite _phantomSprite;
     [SerializeField] int _towerPrice;
 
@@ -16,7 +16,7 @@ public class Buttons : MonoBehaviour
         }
     }
 
-    public GameObject _TowerObject
+    public TowerControll _TowerObject
     {
         get
         {
